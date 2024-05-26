@@ -1,0 +1,5 @@
+{
+    "vector_db_type": "milvus",
+    "milvus_host": "localhost",
+    "milvus_port": "19530"
+}
