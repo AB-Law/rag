@@ -4,7 +4,15 @@ from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 
 class FAISSVectorDB(VectorDB):
+    """A vector database using FAISS for storage and retrieval."""
     def __init__(self, host='127.0.0.1', port='19530'):
+        """
+        Initialize the FAISSVectorDB.
+
+        Parameters:
+        host (str, optional): The host address. Defaults to '127.0.0.1'.
+        port (str, optional): The port number. Defaults to '19530'.
+        """
         self.host = host
         self.port = port
         self.embeddings = OpenAIEmbeddings()

@@ -11,6 +11,7 @@ import os
 from .authRouter import get_current_user
 from rag_functions.vector_db import VectorDBFactory
 from rag_functions.document_loader.pdf_loader import PDFLoader
+from rag_functions.agents.rag_chat import rag_chat
 import aiofiles
 
 router = APIRouter()
@@ -53,3 +54,8 @@ async def store_embeddings(request: Request, file: UploadFile = File(...), user:
     os.remove(file_location)
 
     return {"message": "Stored embeddings successfully."}
+
+@router.post("/query/")
+def query(request: Request, query: str, user: User = Depends(get_current_user)):
+    query_result = rag_chat(query, "pdfs", partition_name = user.username, host = "http://localhost:8888")
+    return {"query": query, "result": query_result}
