@@ -2,7 +2,7 @@ import json
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_openai import OpenAIEmbeddings
 from pymilvus import connections, Collection, CollectionSchema, FieldSchema, DataType
-from vector_db.base import VectorDB  # Assuming VectorDB is defined in base.py
+from .base import VectorDB  # Assuming VectorDB is defined in base.py
 from langchain_community.vectorstores import Milvus
 import fitz  # PyMuPDF
 
