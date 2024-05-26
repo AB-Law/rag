@@ -1,5 +1,5 @@
-from vector_db.faiss_db import FAISSVectorDB
-from vector_db.milvus_db import MilvusVectorDB
+from .faiss_db import FAISSVectorDB
+from .milvus_db import MilvusVectorDB
 
 class VectorDBFactory:
     @staticmethod

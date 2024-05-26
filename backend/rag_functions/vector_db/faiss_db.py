@@ -1,5 +1,5 @@
 import faiss
-from vector_db.base import VectorDB
+from .base import VectorDB
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 
